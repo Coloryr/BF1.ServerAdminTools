@@ -460,7 +460,7 @@ internal static class TaskCheckRule
                     {
                         a = Random.Next(0, list.Count - 1);
                     }
-                    while (a != index);
+                    while (a == index);
                     break;
                 case 2:
                     a = index;

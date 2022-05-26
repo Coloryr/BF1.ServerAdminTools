@@ -48,13 +48,6 @@ public partial class App : Application, IMsgCall
         res.WriteByte(127);
         switch (index)
         {
-            //获取游戏截图
-            case 0:
-                Bitmap map = GameWindowImg.GetWindow();
-                string local = $"{ConfigLocal.Base}/image.png";
-                map.Save(local);
-                res.WriteByte(0).WriteString(local);
-                break;
             default:
                 res.WriteByte(0xFF);
                 break;

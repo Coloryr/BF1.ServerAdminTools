@@ -395,6 +395,13 @@ internal static class MemoryHook
                     }
                 }
             }
+            else
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    _tdCP.WeaponSlot[j] = "";
+                }
+            }
 
             name = InfoUtils.GetPlayerTargetName(_tdCP.Name, out clan);
 

@@ -20,7 +20,7 @@ public static class ServerAPI
         {
             var options = new RestClientOptions(Host)
             {
-                Timeout = 5000
+                Timeout = 10000
             };
 
             client = new RestClient(options);
@@ -80,11 +80,14 @@ public static class ServerAPI
 
                 respContent.Obj = JsonUtils.JsonDese<WelcomeMsg>(respContent.Message);
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError?.error.code} {respError?.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -135,11 +138,14 @@ public static class ServerAPI
                 respContent.IsSuccess = true;
                 respContent.Message = response.Content;
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error?.code} {respError.error?.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -200,11 +206,14 @@ public static class ServerAPI
                 respContent.IsSuccess = true;
                 respContent.Message = response.Content;
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -260,11 +269,14 @@ public static class ServerAPI
                 respContent.IsSuccess = true;
                 respContent.Message = response.Content;
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -317,11 +329,14 @@ public static class ServerAPI
                 respContent.IsSuccess = true;
                 respContent.Message = response.Content;
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -375,11 +390,14 @@ public static class ServerAPI
 
                 respContent.Obj = JsonUtils.JsonDese<FullServerDetails>(respContent.Message);
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -432,11 +450,14 @@ public static class ServerAPI
                 respContent.IsSuccess = true;
                 respContent.Message = response.Content;
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -492,11 +513,14 @@ public static class ServerAPI
 
                 respContent.Obj = JsonUtils.JsonDese<GetWeaponsByPersonaId>(respContent.Message);
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -552,11 +576,14 @@ public static class ServerAPI
 
                 respContent.Obj = JsonUtils.JsonDese<GetVehiclesByPersonaId>(respContent.Message);
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -612,11 +639,14 @@ public static class ServerAPI
 
                 respContent.Obj = JsonUtils.JsonDese<DetailedStatsByPersonaId>(respContent.Message);
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -669,11 +699,14 @@ public static class ServerAPI
                 respContent.IsSuccess = true;
                 respContent.Message = response.Content;
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -726,11 +759,14 @@ public static class ServerAPI
                 respContent.IsSuccess = true;
                 respContent.Message = response.Content;
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -783,11 +819,14 @@ public static class ServerAPI
                 respContent.IsSuccess = true;
                 respContent.Message = response.Content;
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -840,11 +879,14 @@ public static class ServerAPI
                 respContent.IsSuccess = true;
                 respContent.Message = response.Content;
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -897,11 +939,14 @@ public static class ServerAPI
                 respContent.IsSuccess = true;
                 respContent.Message = response.Content;
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -955,11 +1000,14 @@ public static class ServerAPI
 
                 respContent.Obj = JsonUtils.JsonDese<ServerDetails>(respContent.Message);
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -999,11 +1047,14 @@ public static class ServerAPI
                 respContent.IsSuccess = true;
                 respContent.Message = response.Content;
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -1057,11 +1108,14 @@ public static class ServerAPI
 
                 respContent.Obj = JsonUtils.JsonDese<EnvIdViaAuthCode>(respContent.Message);
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)
@@ -1115,11 +1169,14 @@ public static class ServerAPI
 
                 respContent.Obj = JsonUtils.JsonDese<CareerForOwnedGamesByPersonaId>(respContent.Message);
             }
+            else if (response.ErrorMessage != null)
+            {
+                respContent.Message = response.ErrorMessage;
+            }
             else
             {
                 var respError = JsonUtils.JsonDese<RespError>(response.Content);
-
-                respContent.Message = $"{respError.error.code} {respError.error.message}";
+                respContent.Message = $"{respError?.error?.code} {respError?.error?.message}";
             }
         }
         catch (Exception ex)

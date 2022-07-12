@@ -214,7 +214,7 @@ public static class InfoUtils
     /// <returns></returns>
     public static string GetMapChsName(string input)
     {
-        foreach (var item in ServerMapData.AllMapInfo)
+        foreach (var item in MapData.AllMapInfo)
         {
             if (item.ID == input)
             {
@@ -226,7 +226,7 @@ public static class InfoUtils
     }
     public static string GetMapName(string input)
     {
-        foreach (var item in ServerMapData.AllMapInfo)
+        foreach (var item in MapData.AllMapInfo)
         {
             if (item.ID == input)
             {
